@@ -22,7 +22,7 @@ function App() {
             <Account balances={balances} />
           </Route>
           <Route path="/transfers">
-            <Transfers balances={balances} />
+            <Transfers balances={balances} setBalances={setBalances} />
           </Route>
         </Switch>
       </div>
