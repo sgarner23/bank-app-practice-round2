@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: 330px;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 100px;
+  border: 1px solid #444;
+  transition-duration: 0.4s;
+  color: white;
+  background-color: #4caf50;
+}
+
+.link-text {
+  height: 35px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: white;
+  border: 1.5px solid #4caf50;
+}
+
+.link-text:hover {
+  color: black;
+}

@@ -1,24 +1,32 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "./Components/Header";
+
+import { useState } from "react";
+import Account from "./Components/UI/Account";
+import Transfers from "./Components/UI/Transfers";
 
 function App() {
+  const [balances, setBalances] = useState({
+    savings: 5432.47,
+    checking: 426.89,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Header />
+
+        <Switch>
+          <Route path="/account">
+            <Account balances={balances} />
+          </Route>
+          <Route path="/transfers">
+            <Transfers balances={balances} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
